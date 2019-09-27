@@ -1,13 +1,18 @@
-import React from 'react';
-import Campaign from './components/Campaign'
-import './App.css';
+import React from "react";
+import Campaign from "./components/Campaign";
+import CampaignData from "./Fixtures/CampaignData";
+import "./App.scss";
 
-function App() {
-  return (
+
+class App extends React.Component {
+  render() {
+    return (
     <div className="App">
-      <Campaign/>
+      <Campaign  />
     </div>
-  );
+    )
+  }
 }
+
 
 export default App;
