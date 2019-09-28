@@ -1,6 +1,5 @@
 import React from "react";
 import Campaign from "./components/Campaign";
-import CampaignData from "./Fixtures/CampaignData";
 import "./App.scss";
 
 

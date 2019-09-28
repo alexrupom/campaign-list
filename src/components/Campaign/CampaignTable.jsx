@@ -1,6 +1,7 @@
 import React from "react";
 import Status from "./Status";
 import PropTypes from "prop-types";
+import {formatSI} from 'format-si-prefix';
 
 const checkStatus = (startDate, endDate) => {
   let status = false;
@@ -15,10 +16,8 @@ const checkStatus = (startDate, endDate) => {
 };
 
 const CampaignTable = props => {
-  console.log(props.data)
   let table;
-
-  if (props.data.length > 0) {
+  if (props.data && props.data.length > 0) {
     table = props.data.map(item => (
       <tr key={item.id}>
         <th>{item.name}</th>
@@ -27,7 +26,7 @@ const CampaignTable = props => {
         <th>
           <Status active={checkStatus(item.startDate, item.endDate)} />
         </th>
-        <th>{item.budget}</th>
+        <th>{formatSI(item.budget)} USD</th>
       </tr>
     ));
   }
@@ -52,5 +51,15 @@ const CampaignTable = props => {
 CampaignTable.defaultProps = {
   data: []
 };
+
+CampaignTable.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.exact({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    startDate: PropTypes.string.isRequired,
+    endDate: PropTypes.string.isRequired,
+    budget: PropTypes.number.isRequired,
+  }))
+}
 
 export default CampaignTable;
