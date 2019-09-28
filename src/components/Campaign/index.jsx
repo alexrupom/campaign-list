@@ -3,6 +3,7 @@ import CampaignTable from "./CampaignTable";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
+import search from "../../magnifier-tool.svg";
 
 export default class Campaign extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class Campaign extends React.Component {
       endDate: null
     };
   }
+  
   updateConsoleData = data => {
     if (data.length > 0) {
       this.setState({
@@ -111,25 +113,36 @@ export default class Campaign extends React.Component {
       this.updateConsoleData(campaignInput);
     return (
       <div>
-        <h1> HELLO Motherfuckers</h1>
-        <div>
-          <DatePicker
-            selected={this.state.startDate}
-            onChange={this.handleStartDate}
-            maxDate={this.state.endDate}
-            placeholderText="Start Date"
-          />
-          <DatePicker
-            selected={this.state.endDate}
-            minDate={this.state.startDate}
-            onChange={this.handleEndDate}
-            placeholderText="End Date"
-          />
+        <div className="campaign">
+          <div>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleStartDate}
+              maxDate={this.state.endDate}
+              placeholderText="Start Date"
+              className="campaign__date-input"
+            />
+            <DatePicker
+              selected={this.state.endDate}
+              minDate={this.state.startDate}
+              onChange={this.handleEndDate}
+              placeholderText="End Date"
+              className="campaign__date-input"
+            />
+          </div>
 
-          <input
-            placeholder=" Search by Name"
-            onChange={value => this.searchByName(value)}
-          />
+          <div className="campaign__search">
+            <input
+              placeholder=" Search by Name"
+              onChange={value => this.searchByName(value)}
+              name="search"
+              type="text"
+              className="campaign__search__input-field"
+            />
+            <div className="campaign__search__logo">
+              <img src={search} alt="Search Logo"/>
+            </div>
+          </div>
         </div>
         <CampaignTable data={this.state.list} />
       </div>

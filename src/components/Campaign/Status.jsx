@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const Status = props => {
   return (
@@ -14,6 +15,12 @@ const Status = props => {
       </div>
     </div>
   );
+};
+Status.defaultProps = {
+  active: false
+};
+Status.propTypes = {
+  active: PropTypes.bool
 };
 
 export default Status;

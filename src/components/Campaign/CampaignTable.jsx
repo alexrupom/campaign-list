@@ -1,13 +1,15 @@
 import React from "react";
 import Status from "./Status";
 import PropTypes from "prop-types";
-import {formatSI} from 'format-si-prefix';
+import { formatSI } from "format-si-prefix";
+import Table from "react-bootstrap/Table";
+import moment from "moment";
 
 const checkStatus = (startDate, endDate) => {
   let status = false;
-  const currentDate = new Date();
-  const start = new Date(startDate);
-  const end = new Date(endDate);
+  const currentDate = moment().toDate();
+  const start = moment(startDate);
+  const end = moment(endDate);
   if (start < currentDate && currentDate < end) {
     status = true;
   }
@@ -32,7 +34,7 @@ const CampaignTable = props => {
   }
   return (
     <div>
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>Name</th>
@@ -43,7 +45,7 @@ const CampaignTable = props => {
           </tr>
         </thead>
         <tbody>{table}</tbody>
-      </table>
+      </Table>
     </div>
   );
 };
@@ -53,13 +55,15 @@ CampaignTable.defaultProps = {
 };
 
 CampaignTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.exact({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
-    budget: PropTypes.number.isRequired,
-  }))
-}
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      startDate: PropTypes.string.isRequired,
+      endDate: PropTypes.string.isRequired,
+      budget: PropTypes.number.isRequired
+    })
+  )
+};
 
 export default CampaignTable;
