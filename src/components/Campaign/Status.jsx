@@ -16,9 +16,11 @@ const Status = props => {
     </div>
   );
 };
+
 Status.defaultProps = {
   active: false
 };
+
 Status.propTypes = {
   active: PropTypes.bool
 };
