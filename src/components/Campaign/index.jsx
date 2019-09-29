@@ -1,7 +1,6 @@
 import React from "react";
 import CampaignTable from "./CampaignTable";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import search from "../../magnifier-tool.svg";
 
@@ -15,7 +14,7 @@ export default class Campaign extends React.Component {
       endDate: null
     };
   }
-  
+
   updateConsoleData = data => {
     if (data.length > 0) {
       this.setState({
@@ -25,22 +24,26 @@ export default class Campaign extends React.Component {
     }
   };
 
+  listUpdate = (input, filtered) => {
+    if (input) {
+      this.setState({
+        list: filtered
+      });
+    } else {
+      this.setState({
+        list: this.state.inputData
+      });
+    }
+  };
+
   searchByName = event => {
     if (this.state.inputData) {
-      const incoming = event.target.value;
+      const name = event.target.value;
       const newList = [...this.state.inputData];
       const filtered = newList.filter(item =>
-        item.name.toLowerCase().includes(incoming.toLowerCase())
+        item.name.toLowerCase().includes(name.toLowerCase())
       );
-      if (incoming.length > 0) {
-        this.setState({
-          list: filtered
-        });
-      } else {
-        this.setState({
-          list: this.state.inputData
-        });
-      }
+      this.listUpdate(name, filtered);
     }
   };
 
@@ -55,15 +58,7 @@ export default class Campaign extends React.Component {
       const filtered = newList.filter(item =>
         selectedDate.isBefore(item.startDate)
       );
-      if (this.state.startDate) {
-        this.setState({
-          list: filtered
-        });
-      } else {
-        this.setState({
-          list: this.state.inputData
-        });
-      }
+      this.listUpdate(this.state.startDate, filtered);
     }
   };
 
@@ -78,15 +73,7 @@ export default class Campaign extends React.Component {
       const filtered = newList.filter(item =>
         selectedDate.isAfter(item.endDate)
       );
-      if (this.state.endDate) {
-        this.setState({
-          list: filtered
-        });
-      } else {
-        this.setState({
-          list: this.state.inputData
-        });
-      }
+      this.listUpdate(this.state.endDate, filtered);
     }
   };
 
@@ -120,27 +107,27 @@ export default class Campaign extends React.Component {
               onChange={this.handleStartDate}
               maxDate={this.state.endDate}
               placeholderText="Start Date"
-              className="campaign__date-input"
+              className="campaign__input"
             />
             <DatePicker
               selected={this.state.endDate}
               minDate={this.state.startDate}
               onChange={this.handleEndDate}
               placeholderText="End Date"
-              className="campaign__date-input"
+              className="campaign__input"
             />
           </div>
 
-          <div className="campaign__search">
+          <div>
             <input
               placeholder=" Search by Name"
               onChange={value => this.searchByName(value)}
               name="search"
               type="text"
-              className="campaign__search__input-field"
+              className="campaign__input"
             />
-            <div className="campaign__search__logo">
-              <img src={search} alt="Search Logo"/>
+            <div className="campaign__logo">
+              <img src={search} alt="Search Logo" />
             </div>
           </div>
         </div>

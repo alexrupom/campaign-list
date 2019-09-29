@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Campaign />
       </div>
     );
