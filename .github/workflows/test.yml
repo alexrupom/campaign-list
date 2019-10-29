@@ -19,7 +19,8 @@ jobs:
           echo "always-auth=true" >> ~/.npmrc
           echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
           echo "//node.bit.dev/:_authToken={secrets.BIT_NODE_TOKEN}" >> ~/.npmrc
-      - name: Install Dependencies
-        run: yarn install
+          yarn install
+      # - name: Install Dependencies
+      #   run: 
       - name: Run Tests
         run: yarn run test:ci
