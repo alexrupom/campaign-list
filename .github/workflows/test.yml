@@ -13,7 +13,7 @@ jobs:
       - name: Install yarn
         run: |-
           npm install -g yarn
-          yarn global add bit-bin
+          yarn add bit-bin
       - name: Configure Bit
         run: |-
           #   echo "always-auth=true" >> ~/.npmrc
