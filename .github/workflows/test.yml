@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 11.10.x
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://node.bit.dev'
       - name: Install yarn
         run: |-
           npm install -g yarn
@@ -19,9 +19,9 @@ jobs:
         run: |-
           echo "BAAAAAL"
           npm whoami
-          yarn add @bit/fho-wtag.welltravel.button
+          yarn install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.BIT_TOKEN }}  
+          BIT_NODE_TOKEN: ${{ secrets.BIT_TOKEN }}  
       # - name: Install Dependencies
       #   run: yarn install
       # - name: Run Tests
