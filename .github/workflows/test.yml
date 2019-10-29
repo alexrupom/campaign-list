@@ -17,7 +17,8 @@ jobs:
           yarn global add bit-bin
       - name: Configure Bit
         run: |-
-          echo whoami
+          $a = npm whoami
+          echo $a
           yarn install
         env:
           BIT_NODE_TOKE: ${{ secrets.BIT_TOKEN }}  
