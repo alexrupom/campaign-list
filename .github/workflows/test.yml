@@ -21,7 +21,7 @@ jobs:
           npm whoami
           yarn install
         env:
-          BIT_NODE_TOKE: ${{ secrets.BIT_TOKEN }}  
+          BIT_NODE_TOKEN: ${{ secrets.BIT_TOKEN }}  
       # - name: Install Dependencies
       #   run: yarn install
       # - name: Run Tests
