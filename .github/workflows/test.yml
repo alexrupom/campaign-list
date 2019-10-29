@@ -11,14 +11,15 @@ jobs:
         with:
           node-version: 10.16.x
       - name: Install yarn
-        run: |-
-          yarn global add bit-bin
-          npm install -g yarn
-      -name: Bit Configure
-       run: |-
-        npm config set '@bit:registry' https://node.bit.dev
-        npm login --registry=https://node.bitsrc.io\n//node.bitsrc.io/:_authToken={secrets.BIT_NODE_TOKEN}    
+          run: |-
+            yarn global add bit-bin
+            npm install -g yarn
+      - name: Bit Configure
+          run: |-
+            npm config set '@bit:registry' https://node.bit.dev
+            npm login --registry=https://node.bitsrc.io\n//node.bitsrc.io/:_authToken={secrets.BIT_NODE_TOKEN}    
       - name: Install Dependencies
-        run: yarn install
+          run: yarn install
       - name: Run Tests
-        run: yarn run test:ci
+          run: yarn run test:ci
+        
