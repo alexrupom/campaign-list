@@ -30,7 +30,7 @@ jobs:
           echo "Show root npmrc"
           cat ~/.npmrc
           # yarn
-      - name: Install Dependencies
-        /run: yarn install
-      - name: Run Tests
-        run: yarn run test:ci
+      # - name: Install Dependencies
+      #   run: yarn install
+      # - name: Run Tests
+      #   run: yarn run test:ci
