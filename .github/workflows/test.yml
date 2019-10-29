@@ -16,7 +16,9 @@ jobs:
           npm install -g yarn
           yarn global add bit-bin
       - name: Configure Bit
-        run: yarn install
+        run: |-
+          echo whoami
+          yarn install
         env:
           BIT_NODE_TOKE: ${{ secrets.BIT_TOKEN }}  
       # - name: Install Dependencies
