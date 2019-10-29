@@ -18,7 +18,7 @@ jobs:
       - name: Configure Bit
         run: yarn install
         env:
-          BIT_NODE_TOKE: ${{"9817cf8f-ce2f-452a-8ed5-cc8450c342ec"}}  
+          BIT_NODE_TOKE: ${{ secrets.BIT_TOKEN }}  
       # - name: Install Dependencies
       #   run: yarn install
       # - name: Run Tests
