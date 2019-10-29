@@ -15,8 +15,8 @@ jobs:
         run: |-
           npm install -g yarn
           yarn global add bit-bin
-      - name: Configure Bit
-        run: yarn install
+      # - name: Configure Bit
+      - run: yarn install
         env:
           BIT_NODE_TOKE: ${{9817cf8f-ce2f-452a-8ed5-cc8450c342ec}}  
       # - name: Install Dependencies
