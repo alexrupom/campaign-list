@@ -29,8 +29,8 @@ jobs:
           npm config ls
           echo "Show root npmrc"
           cat ~/.npmrc
-          yarn
+          # yarn
       - name: Install Dependencies
-        run: yarn install
+        /run: yarn install
       - name: Run Tests
         run: yarn run test:ci
