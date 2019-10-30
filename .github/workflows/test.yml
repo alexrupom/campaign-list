@@ -20,6 +20,7 @@ jobs:
         run: |-
           echo "BAAAAAL"
           npm whoami
+          npm config set '@bit:registry' https://node.bit.dev
           yarn add @bit/mno-wtag.welltravel.button
           yarn install
         env:
