@@ -13,7 +13,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install yarn
         run: |-
-          rm .yarn.lock
+          rm yarn.lock
           npm install -g yarn
           yarn global add bit-bin
       - name: Configure Bit
