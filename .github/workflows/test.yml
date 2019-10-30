@@ -20,6 +20,7 @@ jobs:
         run: |-
           echo "BAAAAAL"
           npm whoami
+          yarn add @bit/mno-wtag.welltravel.button
           yarn install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.BIT_TOKEN }}  
