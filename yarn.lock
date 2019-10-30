@@ -1019,6 +1019,41 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bit/mno-wtag.welltravel._deprecated-variables@0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/mno-wtag.welltravel._deprecated-variables/-/mno-wtag.welltravel._deprecated-variables-0.0.1.tgz#084ef319acaac7da94d3ab4f6c3b4ecb597659fb"
+  integrity sha1-CE7zGayqx9qU06tPbDtOy1l2Wfs=
+
+"@bit/mno-wtag.welltravel._variables@0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/mno-wtag.welltravel._variables/-/mno-wtag.welltravel._variables-0.0.1.tgz#d1007d610b59a037b262ff8593d07e24d898b680"
+  integrity sha1-0QB9YQtZoDeyYv+Fk9B+JNiYtoA=
+  dependencies:
+    "@bit/mno-wtag.welltravel._deprecated-variables" "0.0.1"
+
+"@bit/mno-wtag.welltravel.button@^0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/mno-wtag.welltravel.button/-/mno-wtag.welltravel.button-0.0.1.tgz#67ebf8ef3a83b61a937eb7ef0f4b5a8023c47e00"
+  integrity sha1-Z+v47zqDthqTfrfvD0tagCPEfgA=
+  dependencies:
+    "@bit/mno-wtag.welltravel.index" "0.0.1"
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react "^16.8.6"
+
+"@bit/mno-wtag.welltravel.index@0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/mno-wtag.welltravel.index/-/mno-wtag.welltravel.index-0.0.1.tgz#410fd95d0135e8cba6ba68673e8621e9af6905b5"
+  integrity sha1-QQ/ZXQE16MumumhnPoYh6a9pBbU=
+  dependencies:
+    "@bit/mno-wtag.welltravel._variables" "0.0.1"
+    "@bit/mno-wtag.welltravel.mixins" "0.0.1"
+
+"@bit/mno-wtag.welltravel.mixins@0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/mno-wtag.welltravel.mixins/-/mno-wtag.welltravel.mixins-0.0.1.tgz#7791726ada0b86061a268c2f52a41d7b7d1d29fe"
+  integrity sha1-d5FyatoLhgYaJowvUqQde30dKf4=
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -8817,6 +8852,15 @@ react-transition-group@^4.0.0:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+
+react@^16.8.6:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
+  integrity sha512-M5Y8yITaLmU0ynd0r1Yvfq98Rmll6q8AxaEe88c8e7LxO8fZ2cNgmFt0aGAS9wzf1Ao32NKXtCl+/tVVtkxq6g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^16.9.0:

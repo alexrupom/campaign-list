@@ -20,8 +20,10 @@ jobs:
         run: |-
           echo "BAAAAAL"
           npm whoami
-          npm config set '@bit:registry' https://node.bit.dev
-          yarn add @bit/mno-wtag.welltravel.button
+          echo "Adding bit.dev to npm registry"
+          echo "always-auth=true" >> ~/.npmrc
+          echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
+          echo "//node.bit.dev/:_authToken={secrets.BIT_NODE_TOKEN}" >> ~/.npmrc
           yarn install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.BIT_TOKEN }}  
